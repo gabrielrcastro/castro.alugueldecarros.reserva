@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Castro.AluguelDeCarros.Reserva.Domain\Castro.AluguelDeCarros.Reserva.Domain.csproj" />
+    <ProjectReference Include="..\Castro.AluguelDeCarros.Reserva.Repository\Castro.AluguelDeCarros.Reserva.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

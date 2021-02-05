@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oRle+qmIhtYcPDPE4VdByORwLUXgO6ud9G2EsN4Pe2P40LlLCtEG5TkZDdD7517/xKY88PNVMOWnDreHi3pGXQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Repository\\Castro.AluguelDeCarros.Reserva.Repository.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\136135\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\136135\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

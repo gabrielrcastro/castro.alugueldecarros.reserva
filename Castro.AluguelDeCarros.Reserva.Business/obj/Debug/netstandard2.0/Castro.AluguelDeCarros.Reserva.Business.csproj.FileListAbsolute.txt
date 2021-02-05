@@ -1,0 +1,14 @@
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.deps.json
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.pdb
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Domain.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Domain.pdb
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.pdb
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.csprojAssemblyReference.cache
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.AssemblyInfoInputs.cache
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.AssemblyInfo.cs
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.csproj.CoreCompileInputs.cache
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.csproj.CopyComplete
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Business\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Business.pdb
