@@ -39,6 +39,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.5.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -60,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Repository\\Castro.AluguelDeCarros.Reserva.Repository.csproj": {
+    "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Infrastructure\\Castro.AluguelDeCarros.Reserva.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Repository\\Castro.AluguelDeCarros.Reserva.Repository.csproj",
-        "projectName": "Castro.AluguelDeCarros.Reserva.Repository",
-        "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Repository\\Castro.AluguelDeCarros.Reserva.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Infrastructure\\Castro.AluguelDeCarros.Reserva.Infrastructure.csproj",
+        "projectName": "Castro.AluguelDeCarros.Reserva.Infrastructure",
+        "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Infrastructure\\Castro.AluguelDeCarros.Reserva.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\136135\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Repository\\obj\\",
+        "outputPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\136135\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,7 +87,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Domain.csproj": {
+                "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -95,11 +103,31 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "Dapper.Contrib": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "Microsoft.Extensions.Caching.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
             }
           },
           "imports": [
@@ -142,6 +170,9 @@
             "projectReferences": {
               "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Domain.csproj": {
                 "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Domain.csproj"
+              },
+              "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Infrastructure\\Castro.AluguelDeCarros.Reserva.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Infrastructure\\Castro.AluguelDeCarros.Reserva.Infrastructure.csproj"
               }
             }
           }
@@ -155,6 +186,14 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Confluent.Kafka": {
+              "target": "Package",
+              "version": "[1.5.3, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -200,9 +239,6 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Repository\\Castro.AluguelDeCarros.Reserva.Repository.csproj": {
-                "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Repository\\Castro.AluguelDeCarros.Reserva.Repository.csproj"
-              },
               "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva\\Castro.AluguelDeCarros.Reserva.API.csproj": {
                 "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva\\Castro.AluguelDeCarros.Reserva.API.csproj"
               }

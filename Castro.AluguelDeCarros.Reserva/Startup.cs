@@ -1,17 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using Castro.AluguelDeCarros.Reserva.API.Extensions;
+using Castro.AluguelDeCarros.Reserva.Services;
+using Confluent.Kafka;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
 
 namespace Castro.AluguelDeCarros.Reserva.API
 {
@@ -27,7 +24,21 @@ namespace Castro.AluguelDeCarros.Reserva.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(options => options.Filters.Add(new Filters.DefaultExceptionFilterAttribute()))
+            .AddJsonOptions(options => { options.JsonSerializerOptions.IgnoreNullValues = true; });
+
             services.AddControllers();
+
+            var producerConfig = new ProducerConfig();
+            var consumerConfig = new ConsumerConfig();
+            Configuration.Bind("Producer", producerConfig);
+            Configuration.Bind("Consumer", consumerConfig);
+            services.AddSingleton(producerConfig);
+            services.AddSingleton(consumerConfig);
+
+            services.AddDependencyResolver();
+
+            //services.AddSingleton<IHostedService, ReservaConsumidor>();
 
             services.AddSwaggerGen(c =>
             {
@@ -42,6 +53,8 @@ namespace Castro.AluguelDeCarros.Reserva.API
 
                 c.IncludeXmlComments(apiPath);
             });
+
+            services.AddMemoryCache();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

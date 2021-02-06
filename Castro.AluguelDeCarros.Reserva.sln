@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Castro.AluguelDeCarros.Reserva.API", "Castro.AluguelDeCarros.Reserva\Castro.AluguelDeCarros.Reserva.API.csproj", "{F1029A92-32C9-49FE-9D96-F92ABA4BFD2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castro.AluguelDeCarros.Reserva.Repository", "Castro.AluguelDeCarros.Reserva.Repository\Castro.AluguelDeCarros.Reserva.Repository.csproj", "{781AB001-D7EA-45E2-88B0-C4CD8B5C9029}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castro.AluguelDeCarros.Reserva.Tests", "Castro.AluguelDeCarros.Reserva.Tests\Castro.AluguelDeCarros.Reserva.Tests.csproj", "{ED0A46BF-8D4A-473F-A8EF-5C55EA23040B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castro.AluguelDeCarros.Reserva.Services", "Castro.AluguelDeCarros.Reserva.Services\Castro.AluguelDeCarros.Reserva.Services.csproj", "{0DB8EA70-2050-4D8E-BC29-CDDCAC68EF4B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castro.AluguelDeCarros.Reserva.Domain", "Castro.AluguelDeCarros.Reserva.Domain\Castro.AluguelDeCarros.Reserva.Domain.csproj", "{8C706C21-E587-4AA1-9AFA-F698AA0E072D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castro.AluguelDeCarros.Reserva.Infrastructure", "Castro.AluguelDeCarros.Reserva.Infrastructure\Castro.AluguelDeCarros.Reserva.Infrastructure.csproj", "{675ECBBC-8D15-4CF3-822A-82D3EF375429}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{F1029A92-32C9-49FE-9D96-F92ABA4BFD2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1029A92-32C9-49FE-9D96-F92ABA4BFD2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1029A92-32C9-49FE-9D96-F92ABA4BFD2D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{781AB001-D7EA-45E2-88B0-C4CD8B5C9029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{781AB001-D7EA-45E2-88B0-C4CD8B5C9029}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{781AB001-D7EA-45E2-88B0-C4CD8B5C9029}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{781AB001-D7EA-45E2-88B0-C4CD8B5C9029}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED0A46BF-8D4A-473F-A8EF-5C55EA23040B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED0A46BF-8D4A-473F-A8EF-5C55EA23040B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED0A46BF-8D4A-473F-A8EF-5C55EA23040B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{8C706C21-E587-4AA1-9AFA-F698AA0E072D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C706C21-E587-4AA1-9AFA-F698AA0E072D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C706C21-E587-4AA1-9AFA-F698AA0E072D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675ECBBC-8D15-4CF3-822A-82D3EF375429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675ECBBC-8D15-4CF3-822A-82D3EF375429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675ECBBC-8D15-4CF3-822A-82D3EF375429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675ECBBC-8D15-4CF3-822A-82D3EF375429}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

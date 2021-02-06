@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cFkYJ6Zcp3KOBdrnWJLB1sE/bPO6QIzfov9M0NsuTHuY1iE/CymUNkFgVGN73m0tJuLI7bwwB9jCa1+161/WrQ==",
+  "dgSpecHash": "Ha0Y0g70e7e4u79Z1Cd9oX32OLXBhUDmkMuhtN8n/u2UEhqSR7BjkC8SiC+CnNGjv/Ar7hpQNLcRkTU44TmbAQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\136135\\.nuget\\packages\\fluentvalidation\\9.5.0\\fluentvalidation.9.5.0.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],

@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Castro.AluguelDeCarros.Reserva.Repository\Castro.AluguelDeCarros.Reserva.Repository.csproj" />
     <ProjectReference Include="..\Castro.AluguelDeCarros.Reserva\Castro.AluguelDeCarros.Reserva.API.csproj" />
   </ItemGroup>
 

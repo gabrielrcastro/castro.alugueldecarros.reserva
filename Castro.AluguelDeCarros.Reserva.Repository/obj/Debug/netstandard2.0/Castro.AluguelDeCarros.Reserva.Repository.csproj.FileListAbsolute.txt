@@ -1,8 +1,0 @@
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Repository\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.deps.json
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Repository\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.dll
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Repository\bin\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.pdb
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Repository\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.AssemblyInfoInputs.cache
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Repository\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.AssemblyInfo.cs
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Repository\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.csproj.CoreCompileInputs.cache
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Repository\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.dll
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Repository\obj\Debug\netstandard2.0\Castro.AluguelDeCarros.Reserva.Repository.pdb

@@ -1,14 +1,42 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 
 namespace Castro.AluguelDeCarros.Reserva.Domain
 {
-    public class Reserva
+    public class Reserva : DomainBase
     {
-        public Reserva()
+        public Reserva(Cotacao cotacao)
         {
+            Id = Guid.NewGuid();
+            VeiculoId = cotacao.VeiculoId;
+            TotalHoras = cotacao.TotalHoras;
+            ClienteId = cotacao.ClienteId;
+            DataCriacao = DateTime.Now;
 
+            var resultadoValidacao = new ReservaValidator().Validate(this);
+            if (!resultadoValidacao.IsValid)
+                Erros = resultadoValidacao.Errors;
+            Valido = resultadoValidacao.IsValid;
         }
 
+        public Guid Id { get; private set; }
+        public Guid VeiculoId { get; private set; }
+        public int TotalHoras { get; private set; }
+        public decimal ValorTotal { get; private set; }
+        public Guid ClienteId { get; private set; }
+        public DateTime DataCriacao { get; private set; }
+        public DateTime? DataAlteracao { get; private set; }
+    }
 
+
+    public class ReservaValidator : AbstractValidator<Reserva>
+    {
+        public ReservaValidator()
+        {
+            RuleFor(reserva => reserva.Id).NotNull();
+            RuleFor(reserva => reserva.VeiculoId).NotNull().WithMessage("O veículo não foi informado");
+            RuleFor(reserva => reserva.TotalHoras).NotNull().WithMessage("O total de horas não foi informado");
+            RuleFor(reserva => reserva.ClienteId).NotNull().WithMessage("O cliente não foi informado");
+        }
     }
 }
