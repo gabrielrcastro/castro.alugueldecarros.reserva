@@ -76,20 +76,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Castro.AluguelDeCarros.Reserva.Business/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Castro.AluguelDeCarros.Reserva.Domain": "1.0.0",
-          "Castro.AluguelDeCarros.Reserva.Repository": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Castro.AluguelDeCarros.Reserva.Business.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Castro.AluguelDeCarros.Reserva.Business.dll": {}
-        }
-      },
       "Castro.AluguelDeCarros.Reserva.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -100,21 +86,10 @@
           "bin/placeholder/Castro.AluguelDeCarros.Reserva.Domain.dll": {}
         }
       },
-      "Castro.AluguelDeCarros.Reserva.Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Castro.AluguelDeCarros.Reserva.Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Castro.AluguelDeCarros.Reserva.Repository.dll": {}
-        }
-      },
       "Castro.AluguelDeCarros.Reserva.Services/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Castro.AluguelDeCarros.Reserva.Business": "1.0.0",
           "Castro.AluguelDeCarros.Reserva.Domain": "1.0.0"
         },
         "compile": {
@@ -234,25 +209,15 @@
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
-    "Castro.AluguelDeCarros.Reserva.Business/1.0.0": {
-      "type": "project",
-      "path": "../Castro.AluguelDeCarros.Reserva.Business/Castro.AluguelDeCarros.Reserva.Business.csproj",
-      "msbuildProject": "../Castro.AluguelDeCarros.Reserva.Business/Castro.AluguelDeCarros.Reserva.Business.csproj"
-    },
     "Castro.AluguelDeCarros.Reserva.Domain/1.0.0": {
       "type": "project",
       "path": "../Castro.AluguelDeCarros.Reserva.Domain/Castro.AluguelDeCarros.Reserva.Domain.csproj",
       "msbuildProject": "../Castro.AluguelDeCarros.Reserva.Domain/Castro.AluguelDeCarros.Reserva.Domain.csproj"
     },
-    "Castro.AluguelDeCarros.Reserva.Repository/1.0.0": {
-      "type": "project",
-      "path": "../Castro.AluguelDeCarros.Reserva.Repository/Castro.AluguelDeCarros.Reserva.Repository.csproj",
-      "msbuildProject": "../Castro.AluguelDeCarros.Reserva.Repository/Castro.AluguelDeCarros.Reserva.Repository.csproj"
-    },
     "Castro.AluguelDeCarros.Reserva.Services/1.0.0": {
       "type": "project",
-      "path": "../Castro.AluguelDeCarros.Reserva.Domain/Castro.AluguelDeCarros.Reserva.Services.csproj",
-      "msbuildProject": "../Castro.AluguelDeCarros.Reserva.Domain/Castro.AluguelDeCarros.Reserva.Services.csproj"
+      "path": "../Castro.AluguelDeCarros.Reserva.Services/Castro.AluguelDeCarros.Reserva.Services.csproj",
+      "msbuildProject": "../Castro.AluguelDeCarros.Reserva.Services/Castro.AluguelDeCarros.Reserva.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -288,8 +253,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Services.csproj": {
-              "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Services.csproj"
+            "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Services\\Castro.AluguelDeCarros.Reserva.Services.csproj": {
+              "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Services\\Castro.AluguelDeCarros.Reserva.Services.csproj"
             }
           }
         }

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Castro.AluguelDeCarros.Reserva.Domain\Castro.AluguelDeCarros.Reserva.Services.csproj" />
+    <ProjectReference Include="..\Castro.AluguelDeCarros.Reserva.Services\Castro.AluguelDeCarros.Reserva.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

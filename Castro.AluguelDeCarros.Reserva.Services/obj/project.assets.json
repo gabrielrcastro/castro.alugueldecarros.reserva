@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "Castro.AluguelDeCarros.Reserva.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Castro.AluguelDeCarros.Reserva.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Castro.AluguelDeCarros.Reserva.Domain.dll": {}
+        }
       }
     }
   },
@@ -172,10 +182,16 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "Castro.AluguelDeCarros.Reserva.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Castro.AluguelDeCarros.Reserva.Domain/Castro.AluguelDeCarros.Reserva.Domain.csproj",
+      "msbuildProject": "../Castro.AluguelDeCarros.Reserva.Domain/Castro.AluguelDeCarros.Reserva.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Castro.AluguelDeCarros.Reserva.Domain >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -185,11 +201,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Services.csproj",
+      "projectUniqueName": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Services\\Castro.AluguelDeCarros.Reserva.Services.csproj",
       "projectName": "Castro.AluguelDeCarros.Reserva.Services",
-      "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Services.csproj",
+      "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Services\\Castro.AluguelDeCarros.Reserva.Services.csproj",
       "packagesPath": "C:\\Users\\136135\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\obj\\",
+      "outputPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\136135\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -205,7 +221,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Domain.csproj": {
+              "projectPath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Domain\\Castro.AluguelDeCarros.Reserva.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

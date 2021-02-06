@@ -375,18 +375,6 @@
           "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
         }
       },
-      "Castro.AluguelDeCarros.Reserva.Business/1.0.0": {
-        "dependencies": {
-          "Castro.AluguelDeCarros.Reserva.Domain": "1.0.0",
-          "Castro.AluguelDeCarros.Reserva.Repository": "1.0.0"
-        },
-        "runtime": {
-          "Castro.AluguelDeCarros.Reserva.Business.dll": {}
-        },
-        "compile": {
-          "Castro.AluguelDeCarros.Reserva.Business.dll": {}
-        }
-      },
       "Castro.AluguelDeCarros.Reserva.Domain/1.0.0": {
         "runtime": {
           "Castro.AluguelDeCarros.Reserva.Domain.dll": {}
@@ -395,17 +383,8 @@
           "Castro.AluguelDeCarros.Reserva.Domain.dll": {}
         }
       },
-      "Castro.AluguelDeCarros.Reserva.Repository/1.0.0": {
-        "runtime": {
-          "Castro.AluguelDeCarros.Reserva.Repository.dll": {}
-        },
-        "compile": {
-          "Castro.AluguelDeCarros.Reserva.Repository.dll": {}
-        }
-      },
       "Castro.AluguelDeCarros.Reserva.Services/1.0.0": {
         "dependencies": {
-          "Castro.AluguelDeCarros.Reserva.Business": "1.0.0",
           "Castro.AluguelDeCarros.Reserva.Domain": "1.0.0"
         },
         "runtime": {
@@ -2157,17 +2136,7 @@
       "path": "swashbuckle.aspnetcore.swaggerui/6.0.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.0.0.nupkg.sha512"
     },
-    "Castro.AluguelDeCarros.Reserva.Business/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Castro.AluguelDeCarros.Reserva.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Castro.AluguelDeCarros.Reserva.Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

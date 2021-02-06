@@ -12,6 +12,11 @@ C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castr
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Domain.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Services.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Services.pdb
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Domain.pdb
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.csprojAssemblyReference.cache
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.AssemblyInfoInputs.cache
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.AssemblyInfo.cs
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.csproj.CoreCompileInputs.cache
@@ -24,12 +29,3 @@ C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castr
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.dll
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.pdb
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.genruntimeconfig.cache
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Business.dll
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Domain.dll
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Repository.dll
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Services.dll
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Services.pdb
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Business.pdb
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Domain.pdb
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Repository.pdb
-C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.csprojAssemblyReference.cache
