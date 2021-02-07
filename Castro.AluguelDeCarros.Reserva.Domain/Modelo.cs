@@ -14,15 +14,12 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
 
             var resultadoValidacao = new ModeloValidator().Validate(this);
             if (!resultadoValidacao.IsValid)
-                Erros = resultadoValidacao.Errors;
+                Erros.AddRange(resultadoValidacao.Errors);
             Valido = resultadoValidacao.IsValid;
         }
 
-        public Guid Id { get; private set; }
         public string Nome { get; private set; }
         public Guid MarcaId { get; private set; }
-        public DateTime DataCriacao { get; private set; }
-        public DateTime? DataAlteracao { get; private set; }
     }
 
 

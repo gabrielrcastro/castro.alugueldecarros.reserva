@@ -1,5 +1,4 @@
 using Castro.AluguelDeCarros.Reserva.API.Extensions;
-using Castro.AluguelDeCarros.Reserva.Services;
 using Confluent.Kafka;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,7 +20,6 @@ namespace Castro.AluguelDeCarros.Reserva.API
 
         public IConfiguration Configuration { get; }
 
-
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(options => options.Filters.Add(new Filters.DefaultExceptionFilterAttribute()))
@@ -37,8 +35,6 @@ namespace Castro.AluguelDeCarros.Reserva.API
             services.AddSingleton(consumerConfig);
 
             services.AddDependencyResolver();
-
-            //services.AddSingleton<IHostedService, ReservaConsumidor>();
 
             services.AddSwaggerGen(c =>
             {

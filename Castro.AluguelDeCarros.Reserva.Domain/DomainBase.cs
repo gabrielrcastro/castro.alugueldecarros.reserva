@@ -1,11 +1,22 @@
 ﻿using FluentValidation.Results;
+using System;
 using System.Collections.Generic;
 
 namespace Castro.AluguelDeCarros.Reserva.Domain
 {
     public abstract class DomainBase
     {
+        public DomainBase()
+        {
+            Erros = new List<ValidationFailure>();
+            Valido = false;
+        }
+
+        public Guid Id { get; protected set; }
+        public DateTime DataCriacao { get; protected set; }
+        public DateTime? DataAlteracao { get; protected set; }
+
         public bool Valido { get; protected set; }
-        public IList<ValidationFailure> Erros { get; protected set; }
+        public List<ValidationFailure> Erros { get; protected set; }
     }
 }
