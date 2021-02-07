@@ -2,6 +2,7 @@
 using Castro.AluguelDeCarros.Reserva.Domain.Enums;
 using Castro.AluguelDeCarros.Reserva.Domain.Infrastructure;
 using Castro.AluguelDeCarros.Reserva.Infrastructure.DbModels;
+using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,23 +12,31 @@ namespace Castro.AluguelDeCarros.Reserva.Infrastructure
 {
     public class VeiculoRepository : BaseRepository<VeiculoDbModel>, IVeiculoRepository
     {
+        private readonly IDbConnection _conexao;
+
         public VeiculoRepository(IDbConnection conexao) : base(conexao)
-        { }
+        {
+            _conexao = conexao;
+        }
 
         public async Task<Veiculo> BuscarVeiculo(Guid id)
         {
             return ConverteDbModelParaDomain(await base.Buscar(id));
         }
 
-        public async Task<IEnumerable<Veiculo>> BuscarTodosVeiculos()
+        public async Task<IEnumerable<Veiculo>> BuscarTodosVeiculosPorCategoria(CategoriaEnum categoria)
         {
             var retorno = new List<Veiculo>();
 
-            var veiculosDb = await base.BuscarTodos();
+            var query = @"SELECT * FROM Veiculo WHERE categoria = @categoria";
+
+            DynamicParameters param = new DynamicParameters();
+            param.Add("categoria", (int)categoria);
+
+            var veiculosDb = await _conexao.QueryAsync<VeiculoDbModel>(query, param);
+
             foreach (var veiculo in veiculosDb)
-            {
                 retorno.Add(ConverteDbModelParaDomain(veiculo));
-            }
 
             return retorno;
         }

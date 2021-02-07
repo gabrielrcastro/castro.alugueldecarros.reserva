@@ -1,5 +1,4 @@
 using Castro.AluguelDeCarros.Reserva.API.Extensions;
-using Confluent.Kafka;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -7,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 
 namespace Castro.AluguelDeCarros.Reserva.API
@@ -25,14 +26,9 @@ namespace Castro.AluguelDeCarros.Reserva.API
             services.AddMvc(options => options.Filters.Add(new Filters.DefaultExceptionFilterAttribute()))
             .AddJsonOptions(options => { options.JsonSerializerOptions.IgnoreNullValues = true; });
 
-            services.AddControllers();
+            services.AddTransient<IDbConnection>((sp) => new SqlConnection(Configuration.GetConnectionString("default")));
 
-            var producerConfig = new ProducerConfig();
-            var consumerConfig = new ConsumerConfig();
-            Configuration.Bind("Producer", producerConfig);
-            Configuration.Bind("Consumer", consumerConfig);
-            services.AddSingleton(producerConfig);
-            services.AddSingleton(consumerConfig);
+            services.AddControllers();
 
             services.AddDependencyResolver();
 

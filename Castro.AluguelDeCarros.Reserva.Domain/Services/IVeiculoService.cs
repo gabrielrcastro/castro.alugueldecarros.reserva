@@ -1,14 +1,11 @@
-﻿using Castro.AluguelDeCarros.Reserva.Domain.Models;
-using System;
+﻿using Castro.AluguelDeCarros.Reserva.Domain.Enums;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Castro.AluguelDeCarros.Reserva.Domain.Services
 {
-    public interface IReservaService
+    public interface IVeiculoService
     {
-        Task<Cotacao> Cotar(CotarModel model);
-        Task<Reserva> ConfirmarCotacao(ConfirmarCotacaoModel model);
+        Task<IEnumerable<Veiculo>> BuscarVeiculosPorCategoria(CategoriaEnum categoria);
     }
 }

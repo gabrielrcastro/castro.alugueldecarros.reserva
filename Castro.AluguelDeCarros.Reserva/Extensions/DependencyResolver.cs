@@ -17,6 +17,7 @@ namespace Castro.AluguelDeCarros.Reserva.API.Extensions
         private static void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<IReservaService, ReservaService>();
+            services.AddScoped<IVeiculoService, VeiculoService>();
         }
 
         private static void RegisterRepositories(IServiceCollection services)
