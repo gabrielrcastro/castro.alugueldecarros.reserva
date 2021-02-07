@@ -20,9 +20,15 @@ namespace Castro.AluguelDeCarros.Reserva.API.Controllers
             _veiculoService = veiculoService;
         }
 
-        [HttpPost]
+        [HttpGet]
+        public async Task<IActionResult> ObterCategorias()
+        {
+            return null;
+        }
+
+        [HttpGet]
         [Route("{codigoCategoria}/veiculos")]
-        public async Task<IActionResult> Cotar(CategoriaEnum codigoCategoria)
+        public async Task<IActionResult> ObterVeiculosPorCategoria(CategoriaEnum codigoCategoria)
         {
             var resultado = await _veiculoService.BuscarVeiculosPorCategoria(codigoCategoria);
 
@@ -33,6 +39,5 @@ namespace Castro.AluguelDeCarros.Reserva.API.Controllers
 
             return Ok(resultado);
         }
-
     }
 }
