@@ -144,3 +144,4 @@ C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castr
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Tests\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Tests.dll
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Tests\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Tests.pdb
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Tests\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.Tests.genruntimeconfig.cache
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva.Tests\bin\Debug\netcoreapp3.1\AutoMapper.dll

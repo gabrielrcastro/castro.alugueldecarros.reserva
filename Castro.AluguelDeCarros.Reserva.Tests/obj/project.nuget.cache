@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VA86ykuS3+NrGKDH0lIpan5gd+7PbJB3f1xSiEGXFe6ujLWoBDLT6I4718KZ347T6OKbCaPusSs+p+wP8H5yiA==",
+  "dgSpecHash": "akcY4I2htUI9Yx7pZzKgNI9NgSuvXJi857F2KG/EIBbzyOwcVVxTEaq4zpDIog0YhR2wlZ7a769WQbZa9qxrDQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Tests\\Castro.AluguelDeCarros.Reserva.Tests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\136135\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\confluent.kafka\\1.5.3\\confluent.kafka.1.5.3.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
