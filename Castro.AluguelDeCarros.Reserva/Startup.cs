@@ -1,3 +1,4 @@
+using AutoMapper;
 using Castro.AluguelDeCarros.Reserva.API.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,8 @@ namespace Castro.AluguelDeCarros.Reserva.API
             services.AddControllers();
 
             services.AddDependencyResolver();
+
+            services.AddAutoMapper();
 
             services.AddSwaggerGen(c =>
             {

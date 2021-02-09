@@ -7,10 +7,12 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
     public class Veiculo : DomainBase
     {
         public Veiculo(Guid? id, string placa, Guid modeloId, DateTime ano, decimal valorHora, CombustivelEnum combustivel,
-            float limitePortaMalas, CategoriaEnum categoria, DateTime dataCriacao, DateTime? dataAlteracao)
+            float limitePortaMalas, Guid categoriaId, DateTime dataCriacao, DateTime? dataAlteracao)
         {
             if (!id.HasValue)
                 Id = Guid.NewGuid();
+            else
+                Id = id.Value;
 
             Placa = placa;
             ModeloId = modeloId;
@@ -18,7 +20,7 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
             ValorHora = valorHora;
             Combustivel = combustivel;
             LimitePortaMalas = limitePortaMalas;
-            Categoria = categoria;
+            CategoriaId = categoriaId;
             DataCriacao = dataCriacao;
             DataAlteracao = dataAlteracao;
 
@@ -34,7 +36,7 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
         public decimal ValorHora { get; private set; }
         public CombustivelEnum Combustivel { get; private set; }
         public float LimitePortaMalas { get; private set; }
-        public CategoriaEnum Categoria { get; private set; }
+        public Guid CategoriaId { get; private set; }
     }
 
 
@@ -42,14 +44,14 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
     {
         public VeiculoValidator()
         {
-            RuleFor(reserva => reserva.Id).NotNull();
-            RuleFor(reserva => reserva.Placa).NotNull().NotEmpty().WithMessage("A placa do veículo não foi informada.");
-            RuleFor(reserva => reserva.ModeloId).NotNull().WithMessage("O modelo do veículo não foi informado.");
-            RuleFor(reserva => reserva.Ano).LessThanOrEqualTo(DateTime.MinValue).WithMessage("O ano informado não é válido.");
-            RuleFor(reserva => reserva.ValorHora).NotNull().GreaterThan(0).WithMessage("Não foi possível obter o valor da hora.");
-            RuleFor(reserva => reserva.Combustivel).NotNull().WithMessage("Não foi possível obter o tipo de combustível.");
-            RuleFor(reserva => reserva.LimitePortaMalas).NotNull().GreaterThan(0).WithMessage("Não foi possível obter o tipo de combustível.");
-            RuleFor(reserva => reserva.Categoria).NotNull().WithMessage("Não foi possível obter a categoria.");
+            RuleFor(c => c.Id).NotNull().NotEqual(Guid.Empty);
+            RuleFor(c => c.Placa).NotNull().NotEmpty().Length(7).WithMessage("A placa do veículo não foi informada.");
+            RuleFor(c => c.ModeloId).NotNull().NotEqual(Guid.Empty).WithMessage("O modelo do veículo não foi informado.");
+            RuleFor(c => c.Ano).GreaterThan(DateTime.MinValue).WithMessage("O ano informado não é válido.");
+            RuleFor(c => c.ValorHora).NotNull().GreaterThan(0).WithMessage("Não foi possível obter o valor da hora.");
+            RuleFor(c => c.Combustivel).NotNull().WithMessage("Não foi possível obter o tipo de combustível.");
+            RuleFor(c => c.LimitePortaMalas).NotNull().GreaterThan(0).WithMessage("Não foi possível obter o limite do porta malas.");
+            RuleFor(c => c.CategoriaId).NotNull().NotEqual(Guid.Empty).WithMessage("Não foi possível obter a categoria.");
         }
     }
 }

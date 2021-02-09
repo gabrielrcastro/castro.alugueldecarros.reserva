@@ -16,9 +16,9 @@ namespace Castro.AluguelDeCarros.Reserva.Services
             _veiculoRepository = veiculoRepository;
         }
 
-        public async Task<IEnumerable<Veiculo>> BuscarVeiculosPorCategoria(CategoriaEnum categoria)
+        public async Task<IEnumerable<Categoria>> BuscarVeiculosPorCategoria()
         {
-            return await _veiculoRepository.BuscarTodosVeiculosPorCategoria(categoria);
+            return await _veiculoRepository.BuscarTodosVeiculosPorCategoria();
         }
     }
 }

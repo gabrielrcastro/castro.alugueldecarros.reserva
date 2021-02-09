@@ -9,6 +9,9 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
         {
             if (!id.HasValue)
                 Id = Guid.NewGuid();
+            else
+                Id = id.Value;
+
             Nome = nome;
 
             var resultadoValidacao = new MarcaValidator().Validate(this);

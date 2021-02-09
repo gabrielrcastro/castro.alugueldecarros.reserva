@@ -9,7 +9,7 @@ namespace Castro.AluguelDeCarros.Reserva.Domain.Infrastructure
     {
         Task<Veiculo> BuscarVeiculo(Guid id);
 
-        Task<IEnumerable<Veiculo>> BuscarTodosVeiculosPorCategoria(CategoriaEnum categoria);
+        Task<IEnumerable<Categoria>> BuscarTodosVeiculosPorCategoria();
 
         Task SalvarVeiculo(Veiculo veiculo);
 

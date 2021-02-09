@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MR8VGzWObjYpsrci61WBV3EFJAYfyskr123Rmz7osEMEem8daiT7fOrjPMBQXtf7FIKQBygaM/Hy1gMh2tYWPQ==",
+  "dgSpecHash": "eMcBSgCcYmyhudRjorIuFedUnH/P/Z9ihTDe4LYhZ7iIyGjMJsMRm2r9Uj2/BXnEvD0Jh8vhPsoSuL4c0s9B7A==",
   "success": true,
   "projectFilePath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva.Infrastructure\\Castro.AluguelDeCarros.Reserva.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\136135\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\fluentvalidation\\9.5.0\\fluentvalidation.9.5.0.nupkg.sha512",

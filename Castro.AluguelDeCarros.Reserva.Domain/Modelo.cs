@@ -9,6 +9,9 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
         {
             if (!id.HasValue)
                 Id = Guid.NewGuid();
+            else
+                Id = id.Value;
+
             Nome = nome;
             MarcaId = marcaId;
 
@@ -28,8 +31,8 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
         public ModeloValidator()
         {
             RuleFor(reserva => reserva.Id).NotNull();
-            RuleFor(reserva => reserva.Nome).NotNull().WithMessage("O nome do Modelo não foi informado.");
-            RuleFor(reserva => reserva.Nome).NotNull().WithMessage("A Marca do Modelo não foi informada.");
+            RuleFor(reserva => reserva.Nome).NotNull().NotEmpty().WithMessage("O nome do Modelo não foi informado.");
+            RuleFor(reserva => reserva.MarcaId).NotNull().NotEqual(Guid.Empty).WithMessage("A Marca do Modelo não foi informada.");
         }
     }
 }

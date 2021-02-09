@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "rAuSNpxZPMbBOeBE4sacpsy+7/r6d6026Drym5X+5V+QtE7+FqqsjrbBFK09PLt0KjHjC3UwIHIdRs6hNdxL8A==",
+  "dgSpecHash": "ui0hfTcP1Pt3/XTPq+QnzSJTE1vaWUVleq7kp+Fpest25MVz0XCB198SuGSkJec/ndAe7Abk5W3axeQkXTlpFQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\136135\\source\\repos\\gabrielrcastro\\castro.alugueldecarros.reserva\\Castro.AluguelDeCarros.Reserva\\Castro.AluguelDeCarros.Reserva.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\136135\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\confluent.kafka\\1.5.3\\confluent.kafka.1.5.3.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\136135\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",

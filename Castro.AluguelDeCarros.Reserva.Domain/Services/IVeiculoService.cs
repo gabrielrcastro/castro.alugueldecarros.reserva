@@ -6,6 +6,6 @@ namespace Castro.AluguelDeCarros.Reserva.Domain.Services
 {
     public interface IVeiculoService
     {
-        Task<IEnumerable<Veiculo>> BuscarVeiculosPorCategoria(CategoriaEnum categoria);
+        Task<IEnumerable<Categoria>> BuscarVeiculosPorCategoria();
     }
 }
