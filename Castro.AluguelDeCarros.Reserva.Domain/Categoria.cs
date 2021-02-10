@@ -7,13 +7,8 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
 {
     public class Categoria : DomainBase
     {
-        public Categoria(Guid? id, string nome)
+        public Categoria(Guid? id, string nome, DateTime? dataCriacao) : base(id, dataCriacao)
         {
-            if (!id.HasValue)
-                Id = Guid.NewGuid();
-            else
-                Id = id.Value;
-
             Nome = nome;
 
             var resultadoValidacao = new CategoriaValidator().Validate(this);
@@ -22,9 +17,8 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
             Valido = resultadoValidacao.IsValid;
         }
 
-        public Categoria(Guid id, string nome, List<Veiculo> veiculos)
+        public Categoria(Guid id, string nome, List<Veiculo> veiculos, DateTime dataCriacao) : base(id, dataCriacao)
         {
-            Id = id;
             Nome = nome;
 
             var resultadoValidacao = new CategoriaValidator().Validate(this);

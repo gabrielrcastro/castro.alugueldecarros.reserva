@@ -5,7 +5,7 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
 {
     public class Reserva : DomainBase
     {
-        public Reserva(Cotacao cotacao)
+        public Reserva(Cotacao cotacao) 
         {
             Id = Guid.NewGuid();
             VeiculoId = cotacao.VeiculoId;

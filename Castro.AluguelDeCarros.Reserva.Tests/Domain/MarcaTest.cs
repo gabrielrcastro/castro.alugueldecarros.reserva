@@ -13,7 +13,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [InlineData("VOLKSWAGEN")]
         public void Nova_Marca_Valido_Test(string nome)
         {
-            Marca marca = new Marca(null, nome);
+            Marca marca = new Marca(null, nome, null);
 
             Assert.Equal(nome, marca.Nome);
             Assert.NotEqual("00000000-0000-0000-0000-000000000000", marca.Id.ToString());
@@ -29,7 +29,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         public void Carrega_Existente_Marca_Valido_Test(string nome)
         {
             var id = Guid.NewGuid();
-            Marca marca = new Marca(id, nome);
+            Marca marca = new Marca(id, nome, DateTime.Now);
 
             Assert.Equal(nome, marca.Nome);
             Assert.Equal(id, marca.Id);
@@ -40,7 +40,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [Fact]
         public void Nova_Marca_Invalido_Test()
         {
-            Marca marca = new Marca(null, null);
+            Marca marca = new Marca(null, null, null);
 
             Assert.Null(marca.Nome);
             Assert.False(marca.Valido);

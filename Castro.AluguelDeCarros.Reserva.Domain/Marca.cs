@@ -5,13 +5,8 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
 {
     public class Marca : DomainBase
     {
-        public Marca(Guid? id, string nome)
+        public Marca(Guid? id, string nome, DateTime? dataCriacao) : base(id, dataCriacao)
         {
-            if (!id.HasValue)
-                Id = Guid.NewGuid();
-            else
-                Id = id.Value;
-
             Nome = nome;
 
             var resultadoValidacao = new MarcaValidator().Validate(this);

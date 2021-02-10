@@ -5,13 +5,8 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
 {
     public class Modelo : DomainBase
     {
-        public Modelo(Guid? id, string nome, Guid marcaId)
+        public Modelo(Guid? id, string nome, Guid marcaId, DateTime? dataCriacao) : base(id, dataCriacao)
         {
-            if (!id.HasValue)
-                Id = Guid.NewGuid();
-            else
-                Id = id.Value;
-
             Nome = nome;
             MarcaId = marcaId;
 

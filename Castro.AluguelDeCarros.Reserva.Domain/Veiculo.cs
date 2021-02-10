@@ -7,13 +7,8 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
     public class Veiculo : DomainBase
     {
         public Veiculo(Guid? id, string placa, Guid modeloId, DateTime ano, decimal valorHora, CombustivelEnum combustivel,
-            float limitePortaMalas, Guid categoriaId, DateTime dataCriacao, DateTime? dataAlteracao)
+            float limitePortaMalas, Guid categoriaId, DateTime? dataCriacao) : base(id, dataCriacao)
         {
-            if (!id.HasValue)
-                Id = Guid.NewGuid();
-            else
-                Id = id.Value;
-
             Placa = placa;
             ModeloId = modeloId;
             Ano = ano;
@@ -21,8 +16,6 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
             Combustivel = combustivel;
             LimitePortaMalas = limitePortaMalas;
             CategoriaId = categoriaId;
-            DataCriacao = dataCriacao;
-            DataAlteracao = dataAlteracao;
 
             var resultadoValidacao = new VeiculoValidator().Validate(this);
             if (!resultadoValidacao.IsValid)
@@ -37,6 +30,18 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
         public CombustivelEnum Combustivel { get; private set; }
         public float LimitePortaMalas { get; private set; }
         public Guid CategoriaId { get; private set; }
+
+        public void Alterar(decimal valorHora, Guid categoriaId)
+        {
+            ValorHora = valorHora;
+            CategoriaId = categoriaId;
+            DataAlteracao = DateTime.Now;
+
+            var resultadoValidacao = new VeiculoValidator().Validate(this);
+            if (!resultadoValidacao.IsValid)
+                Erros.AddRange(resultadoValidacao.Errors);
+            Valido = resultadoValidacao.IsValid;
+        }
     }
 
 

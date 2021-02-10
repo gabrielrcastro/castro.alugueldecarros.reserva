@@ -6,11 +6,8 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
     public class Cliente : DomainBase
     {
         public Cliente(Guid? id, string nome, string cpf, DateTime dataDeNascimento, string enderecoCep, string enderecoLogradouro,
-            string enderecoNumero, string enderecoComplemento, string enderecoCidade, string enderecoEstado)
+            string enderecoNumero, string enderecoComplemento, string enderecoCidade, string enderecoEstado, DateTime dataCriacao) : base(id, dataCriacao)
         {
-            if (!id.HasValue)
-                Id = Guid.NewGuid();
-
             Nome = nome;
             Cpf = cpf;
             DataDeNascimento = dataDeNascimento;

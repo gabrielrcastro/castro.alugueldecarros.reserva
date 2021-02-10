@@ -13,7 +13,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [InlineData("Completo")]
         public void Nova_Categoria_Valida_Test(string nome)
         {
-            Categoria categoria = new Categoria(null, nome);
+            Categoria categoria = new Categoria(null, nome, null);
 
             Assert.Equal(nome, categoria.Nome);
             Assert.NotEqual(Guid.Empty, categoria.Id);
@@ -28,7 +28,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         public void Carrega_Existente_Categoria_Valida_Test(string nome)
         {
             var id = Guid.NewGuid();
-            Categoria categoria = new Categoria(id, nome);
+            Categoria categoria = new Categoria(id, nome, DateTime.Now);
 
             Assert.Equal(nome, categoria.Nome);
             Assert.Equal(id, categoria.Id);
@@ -46,7 +46,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
                 new VeiculoTest().ObterVeiculoValido()
             };
 
-            Categoria categoria = new Categoria(id, "Luxo", veiculos);
+            Categoria categoria = new Categoria(id, "Luxo", veiculos, DateTime.Now);
 
             Assert.Equal(id, categoria.Id);
             Assert.True(categoria.Valido);
@@ -63,7 +63,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
                 new VeiculoTest().ObterVeiculoValido()
             };
 
-            Categoria categoria = new Categoria(id, "Luxo", veiculos);
+            Categoria categoria = new Categoria(id, "Luxo", veiculos, DateTime.Now);
 
             Assert.Equal(id, categoria.Id);
             Assert.False(categoria.Valido);
@@ -76,7 +76,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [InlineData(null)]
         public void Nova_Categoria_Nome_Invalido_Test(string nome)
         {
-            Categoria categoria = new Categoria(null, nome);
+            Categoria categoria = new Categoria(null, nome, null);
 
             Assert.False(categoria.Valido);
             Assert.NotEqual(Guid.Empty, categoria.Id);

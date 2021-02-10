@@ -14,7 +14,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         public void Novo_Modelo_Valido_Test(string nome)
         {
             var marcaId = Guid.NewGuid();
-            Modelo modelo = new Modelo(null, nome, marcaId);
+            Modelo modelo = new Modelo(null, nome, marcaId, null);
 
             Assert.Equal(nome, modelo.Nome);
             Assert.Equal(marcaId, modelo.MarcaId);
@@ -33,7 +33,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         {
             var id = Guid.NewGuid();
             var marcaId = Guid.NewGuid();
-            Modelo modelo = new Modelo(id, nome, marcaId);
+            Modelo modelo = new Modelo(id, nome, marcaId, DateTime.Now);
 
             Assert.Equal(nome, modelo.Nome);
             Assert.Equal(id, modelo.Id);
@@ -48,7 +48,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [InlineData(null)]
         public void Novo_Modelo_Nome_Invalido_Test(string nome)
         {
-            Modelo modelo = new Modelo(null, nome, Guid.NewGuid());
+            Modelo modelo = new Modelo(null, nome, Guid.NewGuid(), null);
 
             Assert.False(modelo.Valido);
             Assert.NotEqual("00000000-0000-0000-0000-000000000000", modelo.Id.ToString());
@@ -59,7 +59,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         public void Novo_Modelo_Marca_Invalido_Test()
         {
             var marcaId = Guid.Empty;
-            Modelo modelo = new Modelo(null, "ECOSPORT SE 1.5 FLEX AT", marcaId);
+            Modelo modelo = new Modelo(null, "ECOSPORT SE 1.5 FLEX AT", marcaId, null);
 
             Assert.False(modelo.Valido);
             Assert.NotEqual("00000000-0000-0000-0000-000000000000", modelo.Id.ToString());

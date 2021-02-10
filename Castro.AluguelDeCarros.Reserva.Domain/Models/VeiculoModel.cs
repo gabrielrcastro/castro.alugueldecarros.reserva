@@ -1,13 +1,16 @@
-﻿namespace Castro.AluguelDeCarros.Reserva.Domain.Models
+﻿using Castro.AluguelDeCarros.Reserva.Domain.Enums;
+using System;
+
+namespace Castro.AluguelDeCarros.Reserva.Domain.Models
 {
     public class VeiculoModel
     {
         public string Placa { get; set; }
-        public string ModeloNome { get; set; }
-        public string Ano { get; set; }
+        public Guid ModeloId { get; set; }
+        public int Ano { get; set; }
         public decimal ValorHora { get; set; }
-        public string TipoCombustivel { get; set; }
+        public CombustivelEnum TipoCombustivel { get; set; }
         public float LimitePortaMalas { get; set; }
-        public string Categoria { get; set; }
+        public Guid CategoriaId { get; set; }
     }
 }

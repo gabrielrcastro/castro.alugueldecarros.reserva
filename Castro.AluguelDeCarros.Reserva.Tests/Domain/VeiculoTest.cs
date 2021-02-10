@@ -43,7 +43,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         public void Carrega_Existente_Veiculo_Valido_Test(string placa, int ano)
         {
             var id = Guid.NewGuid();
-            Veiculo veiculo = new Veiculo(id, placa, Guid.NewGuid(), new DateTime(ano, 1, 1), 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), DateTime.Now, null);
+            Veiculo veiculo = new Veiculo(id, placa, Guid.NewGuid(), new DateTime(ano, 1, 1), 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), DateTime.Now);
 
             Assert.Equal(id, veiculo.Id);
             Assert.NotEqual(Guid.Empty, veiculo.Id);
@@ -61,7 +61,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [InlineData(null)]
         public void Novo_Veiculo_Placa_Invalido_Test(string placa)
         {
-            Veiculo veiculo = new Veiculo(null, placa, Guid.NewGuid(), new DateTime(2015, 1, 1), 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), DateTime.Now, null);
+            Veiculo veiculo = new Veiculo(null, placa, Guid.NewGuid(), new DateTime(2015, 1, 1), 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), null);
 
             Assert.False(veiculo.Valido);
             Assert.NotEmpty(veiculo.Erros);
@@ -71,7 +71,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [Fact]
         public void Novo_Veiculo_Modelo_Invalido_Test()
         {
-            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.Empty, new DateTime(2015, 1, 1), 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), DateTime.Now, null);
+            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.Empty, new DateTime(2015, 1, 1), 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), null);
 
             Assert.False(veiculo.Valido);
             Assert.NotEmpty(veiculo.Erros);
@@ -81,7 +81,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [Fact]
         public void Novo_Veiculo_Ano_Invalido_Test()
         {
-            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.NewGuid(), DateTime.MinValue, 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), DateTime.Now, null);
+            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.NewGuid(), DateTime.MinValue, 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), null);
 
             Assert.False(veiculo.Valido);
             Assert.NotEmpty(veiculo.Erros);
@@ -94,7 +94,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [InlineData(-10.22)]
         public void Novo_Veiculo_ValorHora_Invalido_Test(decimal valorHora)
         {
-            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.NewGuid(), new DateTime(2015, 1, 1), valorHora, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), DateTime.Now, null);
+            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.NewGuid(), new DateTime(2015, 1, 1), valorHora, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), null);
 
             Assert.False(veiculo.Valido);
             Assert.NotEmpty(veiculo.Erros);
@@ -107,7 +107,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [InlineData(-10.22)]
         public void Novo_Veiculo_LimitePortaMalas_Invalido_Test(float limitePortaMalas)
         {
-            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.NewGuid(), new DateTime(2015, 1, 1), 120.54m, CombustivelEnum.Gasolina, limitePortaMalas, Guid.NewGuid(), DateTime.Now, null);
+            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.NewGuid(), new DateTime(2015, 1, 1), 120.54m, CombustivelEnum.Gasolina, limitePortaMalas, Guid.NewGuid(), null);
 
             Assert.False(veiculo.Valido);
             Assert.NotEmpty(veiculo.Erros);
@@ -117,7 +117,7 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
         [Fact]
         public void Novo_Veiculo_Categoria_Invalido_Test()
         {
-            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.NewGuid(), new DateTime(2015, 1, 1), 120.54m, CombustivelEnum.Gasolina, 13.7f, Guid.Empty, DateTime.Now, null);
+            Veiculo veiculo = new Veiculo(null, "HLN1029", Guid.NewGuid(), new DateTime(2015, 1, 1), 120.54m, CombustivelEnum.Gasolina, 13.7f, Guid.Empty, null);
 
             Assert.False(veiculo.Valido);
             Assert.NotEmpty(veiculo.Erros);
@@ -126,12 +126,12 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
 
         public Veiculo ObterVeiculoValido()
         {
-            return new Veiculo(null, "HLN1029", Guid.NewGuid(), new DateTime(2010, 1, 1), 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), DateTime.Now, null);
+            return new Veiculo(null, "HLN1029", Guid.NewGuid(), new DateTime(2010, 1, 1), 159.92m, CombustivelEnum.Gasolina, 20.4f, Guid.NewGuid(), DateTime.Now);
         }
 
         public Veiculo ObterVeiculoInvalido()
         {
-            return new Veiculo(Guid.Empty, null, Guid.Empty, DateTime.MinValue, 0, CombustivelEnum.Gasolina, 0, Guid.Empty, DateTime.MinValue, null);
+            return new Veiculo(Guid.Empty, null, Guid.Empty, DateTime.MinValue, 0, CombustivelEnum.Gasolina, 0, Guid.Empty, DateTime.Now);
         }
     }
 }
