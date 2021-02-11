@@ -42,8 +42,25 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
                 Erros.AddRange(resultadoValidacao.Errors);
             Valido = resultadoValidacao.IsValid;
         }
-    }
 
+        public void ValidarModelo(Modelo modelo)
+        {
+            if (modelo == null || modelo.Id == Guid.Empty)
+            {
+                Valido = false;
+                Erros.Add(new FluentValidation.Results.ValidationFailure("ModeloId", "O modelo informado não existe."));
+            }
+        }
+
+        public void ValidarCategoria(Categoria categoria)
+        {
+            if (categoria == null || categoria.Id == Guid.Empty)
+            {
+                Valido = false;
+                Erros.Add(new FluentValidation.Results.ValidationFailure("CategoriaId", "A categoria informada não existe."));
+            }
+        }
+    }
 
     public class VeiculoValidator : AbstractValidator<Veiculo>
     {

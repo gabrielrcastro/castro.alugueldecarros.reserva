@@ -21,17 +21,25 @@ namespace Castro.AluguelDeCarros.Reserva.API.Extensions
 
                 var modelo = cfg.CreateMap<ModeloDbModel, Modelo>();
                 modelo.ForAllMembers(opt => opt.Ignore());
-                modelo.ConstructUsing(src => new Modelo(src.Id, src.Nome, src.MarcaId, src.DataCriacao));
+                modelo.ForCtorParam("id", opt => opt.MapFrom(src => src.Id));
+                modelo.ForCtorParam("nome", opt => opt.MapFrom(src => src.Nome));
+                modelo.ForCtorParam("marcaId", opt => opt.MapFrom(src => src.MarcaId));
+                modelo.ForCtorParam("veiculos", opt => opt.MapFrom(src => src.Veiculos));
+                modelo.ForCtorParam("dataCriacao", opt => opt.MapFrom(src => src.DataCriacao));
 
                 var marca = cfg.CreateMap<MarcaDbModel, Marca>();
                 marca.ForAllMembers(opt => opt.Ignore());
-                marca.ConstructUsing(src => new Marca(src.Id, src.Nome, src.DataCriacao));
+                marca.ForCtorParam("id", opt => opt.MapFrom(src => src.Id));
+                marca.ForCtorParam("nome", opt => opt.MapFrom(src => src.Nome));
+                marca.ForCtorParam("veiculos", opt => opt.MapFrom(src => src.Veiculos));
+                marca.ForCtorParam("dataCriacao", opt => opt.MapFrom(src => src.DataCriacao));
 
                 var categoria = cfg.CreateMap<CategoriaDbModel, Categoria>();
                 categoria.ForAllMembers(opt => opt.Ignore());
                 categoria.ForCtorParam("id", opt => opt.MapFrom(src => src.Id));
                 categoria.ForCtorParam("nome", opt => opt.MapFrom(src => src.Nome));
                 categoria.ForCtorParam("veiculos", opt => opt.MapFrom(src => src.Veiculos));
+                categoria.ForCtorParam("dataCriacao", opt => opt.MapFrom(src => src.DataCriacao));
 
                 //Domain para DbModel
                 cfg.CreateMap<Veiculo, VeiculoDbModel>();
@@ -44,6 +52,14 @@ namespace Castro.AluguelDeCarros.Reserva.API.Extensions
                 veiculoModel.ForAllMembers(opt => opt.Ignore());
                 veiculoModel.ConstructUsing(src => new Veiculo(null, src.Placa, src.ModeloId, new DateTime(src.Ano, 1, 1), src.ValorHora, src.TipoCombustivel, src.LimitePortaMalas, src.CategoriaId, null));
 
+                var categoriaModel = cfg.CreateMap<string, Categoria>();
+                categoriaModel.ConstructUsing(src => new Categoria(null, src, null));
+
+                var marcaModel = cfg.CreateMap<string, Marca>();
+                marcaModel.ConstructUsing(src => new Marca(null, src, null));
+
+                var modeloModel = cfg.CreateMap<ModeloModel, Modelo>();
+                modeloModel.ConstructUsing(src => new Modelo(null, src.Nome, src.MarcaId, null));
             });
 
             IMapper mapper = config.CreateMapper();

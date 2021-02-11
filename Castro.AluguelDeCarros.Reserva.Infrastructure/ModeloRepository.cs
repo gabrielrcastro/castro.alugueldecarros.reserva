@@ -35,7 +35,7 @@ namespace Castro.AluguelDeCarros.Reserva.Infrastructure
 
         public async Task AtualizarModelo(Modelo modelo)
         {
-            await base.Salvar(_mapper.Map<ModeloDbModel>(modelo));
+            await base.Atualizar(_mapper.Map<ModeloDbModel>(modelo));
         }
     }
 }

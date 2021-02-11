@@ -27,6 +27,8 @@ namespace Castro.AluguelDeCarros.Reserva.API
             services.AddMvc(options => options.Filters.Add(new Filters.DefaultExceptionFilterAttribute()))
             .AddJsonOptions(options => { options.JsonSerializerOptions.IgnoreNullValues = true; });
 
+            services.AddRouting(options => options.LowercaseUrls = true);
+
             services.AddTransient<IDbConnection>((sp) => new SqlConnection(Configuration.GetConnectionString("default")));
 
             services.AddControllers();

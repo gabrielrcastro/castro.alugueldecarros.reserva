@@ -22,14 +22,13 @@ namespace Castro.AluguelDeCarros.Reserva.Services
 
         public async Task<Cotacao> Cotar(CotarModel model)
         {
-            //var veiculo = _veiculoService
+            //var veiculo = _veiculoService.Obter(model.VeiculoId);
 
-            //var cotacao = new Cotacao(model.VeiculoId, model.TotalHoras, model.ClienteId);
+            //var cotacao = new Cotacao(null, model.VeiculoId, model.TotalHoras, null, 0, null);
 
             //_reservaRepository.SalvarCotacaoNoCache(cotacao);
 
             //return cotacao;
-
             return null;
         }
 

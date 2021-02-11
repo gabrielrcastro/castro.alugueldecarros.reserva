@@ -23,14 +23,28 @@ namespace Castro.AluguelDeCarros.Reserva.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ObterVeiculosPorCategoria()
+        public async Task<IActionResult> ObterVeiculos()
         {
-            var resultado = await _veiculoService.BuscarVeiculosPorCategoria();
+            var resultado = await _veiculoService.BuscarTodos();
 
             if (resultado == null)
                 return NotFound();
             if (resultado.Any(c => !c.Valido))
                 return new BadRequestObjectResult(new ErrorResult(resultado.Select(c => c.Erros)).ToResult());
+
+            return Ok(resultado);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> ObterVeiculo(Guid id)
+        {
+            var resultado = await _veiculoService.Obter(id);
+
+            if (resultado == null)
+                return NotFound();
+            if (!resultado.Valido)
+                return new BadRequestObjectResult(new ErrorResult(resultado.Erros).ToResult());
 
             return Ok(resultado);
         }

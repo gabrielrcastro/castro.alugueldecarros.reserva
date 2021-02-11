@@ -27,6 +27,21 @@ namespace Castro.AluguelDeCarros.Reserva.Infrastructure
             return _mapper.Map<Veiculo>(await base.Buscar(id));
         }
 
+        public async Task SalvarVeiculo(Veiculo veiculo)
+        {
+            await base.Salvar(_mapper.Map<VeiculoDbModel>(veiculo));
+        }
+
+        public async Task AtualizarVeiculo(Veiculo veiculo)
+        {
+            await base.Atualizar(_mapper.Map<VeiculoDbModel>(veiculo));
+        }
+
+        public async Task<IEnumerable<Veiculo>> BuscarTodosVeiculos()
+        {
+            return _mapper.Map<List<Veiculo>>(await base.BuscarTodos());
+        }
+
         public async Task<IEnumerable<Categoria>> BuscarTodosVeiculosPorCategoria()
         {
             var retorno = new List<Categoria>();
@@ -42,11 +57,11 @@ namespace Castro.AluguelDeCarros.Reserva.Infrastructure
                                     (categoria, veiculo) =>
                                     {
                                         if (!relacao.TryGetValue(categoria.Id, out CategoriaDbModel encontrado))
-                                        {
                                             relacao.Add(categoria.Id, encontrado = categoria);
-                                        }
+
                                         if (encontrado.Veiculos == null)
                                             encontrado.Veiculos = new List<VeiculoDbModel>();
+
                                         encontrado.Veiculos.Add(veiculo);
                                         return encontrado;
                                     });
@@ -54,15 +69,68 @@ namespace Castro.AluguelDeCarros.Reserva.Infrastructure
             return _mapper.Map<List<Categoria>>(relacao?.Values);
         }
 
-        public async Task SalvarVeiculo(Veiculo veiculo)
+        public async Task<IEnumerable<Marca>> BuscarVeiculosPorMarca(Guid id)
         {
-            await base.Salvar(_mapper.Map<VeiculoDbModel>(veiculo));
+            var retorno = new List<Marca>();
+
+            var parameters = new DynamicParameters();
+            parameters.Add("marcaId", id);
+
+            var query = @"SELECT ma.id, ma.nome, v.id, v.placa, v.modeloId, v.ano, v.valorHora, v.combustivel, v.limitePortaMalas, 
+                            v.categoriaId, v.dataCriacao, v.DataAlteracao
+                        FROM Veiculo v 
+                        INNER JOIN Modelo mo
+                            ON mo.id = v.modeloId
+                        INNER JOIN Marca ma 
+                            ON ma.id = mo.marcaId                        
+                        WHERE ma.id = @marcaId";
+
+            var relacao = new Dictionary<Guid, MarcaDbModel>();
+            var categoriasDb = await _conexao.QueryAsync<MarcaDbModel, VeiculoDbModel, MarcaDbModel>(query,
+                                    (marca, veiculo) =>
+                                    {
+                                        if (!relacao.TryGetValue(marca.Id, out MarcaDbModel encontrado))
+                                            relacao.Add(marca.Id, encontrado = marca);
+
+                                        if (encontrado.Veiculos == null)
+                                            encontrado.Veiculos = new List<VeiculoDbModel>();
+
+                                        encontrado.Veiculos.Add(veiculo);
+                                        return encontrado;
+                                    }, parameters);
+
+            return _mapper.Map<List<Marca>>(relacao?.Values);
         }
 
-        public async Task AtualizarVeiculo(Veiculo veiculo)
+        public async Task<IEnumerable<Modelo>> BuscarVeiculosPorModelo(Guid id)
         {
-            await base.Salvar(_mapper.Map<VeiculoDbModel>(veiculo));
-        }
+            var retorno = new List<Modelo>();
 
+            var parameters = new DynamicParameters();
+            parameters.Add("modeloId", id);
+
+            var query = @"SELECT mo.id, mo.nome, v.id, v.placa, v.modeloId, v.ano, v.valorHora, v.combustivel, v.limitePortaMalas, 
+                            v.categoriaId, v.dataCriacao, v.DataAlteracao
+                        FROM Veiculo v 
+                        INNER JOIN Modelo mo
+                            ON mo.id = v.modeloId                 
+                        WHERE mo.id = @modeloId";
+
+            var relacao = new Dictionary<Guid, ModeloDbModel>();
+            var categoriasDb = await _conexao.QueryAsync<ModeloDbModel, VeiculoDbModel, ModeloDbModel>(query,
+                                    (modelo, veiculo) =>
+                                    {
+                                        if (!relacao.TryGetValue(modelo.Id, out ModeloDbModel encontrado))
+                                            relacao.Add(modelo.Id, encontrado = modelo);
+
+                                        if (encontrado.Veiculos == null)
+                                            encontrado.Veiculos = new List<VeiculoDbModel>();
+
+                                        encontrado.Veiculos.Add(veiculo);
+                                        return encontrado;
+                                    }, parameters);
+
+            return _mapper.Map<List<Modelo>>(relacao?.Values);
+        }
     }
 }

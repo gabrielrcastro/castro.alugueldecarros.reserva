@@ -82,5 +82,35 @@ namespace Castro.AluguelDeCarros.Reserva.Tests.Domain
             Assert.NotEqual(Guid.Empty, categoria.Id);
             Assert.NotEmpty(categoria.Erros);
         }
+
+        [Theory]
+        [InlineData("Luxo")]
+        [InlineData("Básico")]
+        [InlineData("Completo")]
+        public void DefinirAlterarNome_Valido_Test(string nome)
+        {
+            Categoria categoria = new Categoria(Guid.NewGuid(), "NOME ANTIGO", DateTime.Now);
+            categoria.DefinirOuAlterarNome(nome);
+
+            Assert.Equal(nome, categoria.Nome);
+            Assert.NotEqual(Guid.Empty, categoria.Id);
+            Assert.True(categoria.Valido);
+            Assert.Empty(categoria.Erros);
+        }
+
+        [Theory]
+        [InlineData("  ")]
+        [InlineData("")]
+        [InlineData(null)]
+        public void DefinirAlterarNome_Invalido_Test(string nome)
+        {
+            Categoria categoria = new Categoria(Guid.NewGuid(), "NOME ANTIGO", DateTime.Now);
+            categoria.DefinirOuAlterarNome(nome);
+
+            Assert.Equal(nome, categoria.Nome);
+            Assert.NotEqual(Guid.Empty, categoria.Id);
+            Assert.False(categoria.Valido);
+            Assert.NotEmpty(categoria.Erros);
+        }
     }
 }

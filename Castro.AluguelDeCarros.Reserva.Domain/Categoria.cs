@@ -9,23 +9,12 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
     {
         public Categoria(Guid? id, string nome, DateTime? dataCriacao) : base(id, dataCriacao)
         {
-            Nome = nome;
-
-            var resultadoValidacao = new CategoriaValidator().Validate(this);
-            if (!resultadoValidacao.IsValid)
-                Erros.AddRange(resultadoValidacao.Errors);
-            Valido = resultadoValidacao.IsValid;
+            DefinirOuAlterarNome(nome);
         }
 
         public Categoria(Guid id, string nome, List<Veiculo> veiculos, DateTime dataCriacao) : base(id, dataCriacao)
         {
-            Nome = nome;
-
-            var resultadoValidacao = new CategoriaValidator().Validate(this);
-            if (!resultadoValidacao.IsValid)
-                Erros.AddRange(resultadoValidacao.Errors);
-            Valido = resultadoValidacao.IsValid;
-
+            DefinirOuAlterarNome(nome);
             AdicionarVeiculos(veiculos);
         }
 
@@ -34,6 +23,16 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
 
 
         #region Métodos
+        public void DefinirOuAlterarNome(string nome)
+        {
+            Nome = nome;
+
+            var resultadoValidacao = new CategoriaValidator().Validate(this);
+            if (!resultadoValidacao.IsValid)
+                Erros.AddRange(resultadoValidacao.Errors);
+            Valido = resultadoValidacao.IsValid;
+        }
+
         public void AdicionarVeiculos(List<Veiculo> veiculos)
         {
             Veiculos = veiculos;
