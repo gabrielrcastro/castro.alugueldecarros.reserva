@@ -3,15 +3,15 @@ using System;
 
 namespace Castro.AluguelDeCarros.Reserva.Domain
 {
-    public class Cliente : DomainBase
+    public class Cliente : UsuarioBase
     {
-        public Cliente(Guid? id, string nome, string cpf, DateTime dataDeNascimento, string enderecoCep, string enderecoLogradouro,
-            string enderecoNumero, string enderecoComplemento, string enderecoCidade, string enderecoEstado, DateTime dataCriacao) : base(id, dataCriacao)
+        public Cliente(Guid? id, string nome, string cpf, string senha, DateTime dataDeNascimento, string enderecoCep, string enderecoLogradouro,
+            string enderecoNumero, string enderecoComplemento, string enderecoCidade, string enderecoEstado, DateTime? dataCriacao) : base(id, cpf, senha, nome, dataCriacao)
         {
-            Nome = nome;
             Cpf = cpf;
-            DataDeNascimento = dataDeNascimento;
+            DataNascimento = dataDeNascimento;
             Endereco = new Endereco(enderecoCep, enderecoLogradouro, enderecoNumero, enderecoComplemento, enderecoCidade, enderecoEstado);
+            Tipo = Enums.TipoUsuarioEnum.Cliente;
 
             var resultadoValidacao = new ClienteValidator().Validate(this);
             if (!resultadoValidacao.IsValid)
@@ -21,11 +21,6 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
 
             Valido = resultadoValidacao.IsValid;
         }
-
-        public string Nome { get; private set; }
-        public string Cpf { get; private set; }
-        public DateTime DataDeNascimento { get; private set; }
-        public Endereco Endereco { get; private set; }
     }
 
     public class ClienteValidator : AbstractValidator<Cliente>
@@ -35,7 +30,7 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
             RuleFor(reserva => reserva.Id).NotNull();
             RuleFor(reserva => reserva.Nome).NotNull().WithMessage("O nome do cliente não foi informado.");
             RuleFor(reserva => reserva.Cpf).NotNull().WithMessage("O CPF do cliente não foi informado.");
-            RuleFor(reserva => reserva.DataDeNascimento).GreaterThan(DateTime.MinValue).WithMessage("A Data de Nascimento não foi informada.");
+            RuleFor(reserva => reserva.DataNascimento).GreaterThan(DateTime.MinValue).WithMessage("A Data de Nascimento não foi informada.");
         }
     }
 }

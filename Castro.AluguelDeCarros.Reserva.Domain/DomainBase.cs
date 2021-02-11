@@ -7,7 +7,10 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
     public abstract class DomainBase
     {
         public DomainBase()
-        { }
+        {
+            Erros = new List<ValidationFailure>();
+            Valido = false;
+        }
 
         public DomainBase(Guid? id, DateTime? dataCriacao)
         {

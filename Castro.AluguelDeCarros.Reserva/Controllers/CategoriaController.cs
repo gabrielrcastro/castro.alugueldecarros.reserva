@@ -26,42 +26,66 @@ namespace Castro.AluguelDeCarros.Reserva.API.Controllers
         [HttpGet]
         public async Task<IActionResult> ObterCategorias()
         {
-            var resultado = await _categoriaService.BuscarTodas();
+            try
+            {
+                var resultado = await _categoriaService.BuscarTodas();
 
-            if (resultado == null)
-                return NotFound();
-            if (resultado.Any(c => !c.Valido))
-                return new BadRequestObjectResult(new ErrorResult(resultado.Select(c => c.Erros)).ToResult());
+                if (resultado == null)
+                    return NotFound();
+                if (resultado.Any(c => !c.Valido))
+                    return new BadRequestObjectResult(new ErrorResult(resultado.Select(c => c.Erros)).ToResult());
 
-            return Ok(resultado);
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Erro ao obter categorias.", string.Concat(ex.Message, ex.StackTrace));
+                return StatusCode(500);
+            }
         }
 
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> ObterCategoria(Guid id)
         {
-            var resultado = await _categoriaService.Obter(id);
+            try
+            {
+                var resultado = await _categoriaService.Obter(id);
 
-            if (resultado == null)
-                return NotFound();
-            if (!resultado.Valido)
-                return new BadRequestObjectResult(new ErrorResult(resultado.Erros).ToResult());
+                if (resultado == null)
+                    return NotFound();
+                if (!resultado.Valido)
+                    return new BadRequestObjectResult(new ErrorResult(resultado.Erros).ToResult());
 
-            return Ok(resultado);
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Erro ao obter categoria.", string.Concat(ex.Message, ex.StackTrace));
+                return StatusCode(500);
+            }
         }
 
         [HttpGet]
         [Route("veiculos")]
         public async Task<IActionResult> ObterVeiculosPorCategoria()
         {
-            var resultado = await _veiculoService.BuscarVeiculosPorCategoria();
+            try
+            {
+                var resultado = await _veiculoService.BuscarVeiculosPorCategoria();
 
-            if (resultado == null)
-                return NotFound();
-            if (resultado.Any(c => !c.Valido))
-                return new BadRequestObjectResult(new ErrorResult(resultado.Select(c => c.Erros)).ToResult());
+                if (resultado == null)
+                    return NotFound();
+                if (resultado.Any(c => !c.Valido))
+                    return new BadRequestObjectResult(new ErrorResult(resultado.Select(c => c.Erros)).ToResult());
 
-            return Ok(resultado);
+                return Ok(resultado);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Erro ao obter veículos por categoria.", string.Concat(ex.Message, ex.StackTrace));
+                return StatusCode(500);
+            }
         }
     }
 }

@@ -5,13 +5,25 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
 {
     public class Reserva : DomainBase
     {
-        public Reserva(Cotacao cotacao) 
+        public Reserva(Cotacao cotacao, Guid clienteId) : base(null, null)
         {
-            Id = Guid.NewGuid();
             VeiculoId = cotacao.VeiculoId;
-            TotalHoras = cotacao.TotalHoras;
-            ClienteId = cotacao.ClienteId;
-            DataCriacao = DateTime.Now;
+            Horas = cotacao.TotalHoras;
+            Valor = cotacao.ValorTotal;
+            ClienteId = clienteId;
+
+            var resultadoValidacao = new ReservaValidator().Validate(this);
+            if (!resultadoValidacao.IsValid)
+                Erros.AddRange(resultadoValidacao.Errors);
+            Valido = resultadoValidacao.IsValid;
+        }
+
+        public Reserva(Guid id, Guid veiculoId, int totalHoras, decimal valorTotal, Guid clienteId, DateTime dataCriacao) : base(id, dataCriacao)
+        {
+            VeiculoId = veiculoId;
+            Horas = totalHoras;
+            Valor = valorTotal;
+            ClienteId = clienteId;
 
             var resultadoValidacao = new ReservaValidator().Validate(this);
             if (!resultadoValidacao.IsValid)
@@ -20,20 +32,20 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
         }
 
         public Guid VeiculoId { get; private set; }
-        public int TotalHoras { get; private set; }
-        public decimal ValorTotal { get; private set; }
+        public int Horas { get; private set; }
+        public decimal Valor { get; private set; }
         public Guid ClienteId { get; private set; }
     }
-
 
     public class ReservaValidator : AbstractValidator<Reserva>
     {
         public ReservaValidator()
         {
-            RuleFor(reserva => reserva.Id).NotNull();
-            RuleFor(reserva => reserva.VeiculoId).NotNull().WithMessage("O veículo não foi informado");
-            RuleFor(reserva => reserva.TotalHoras).NotNull().WithMessage("O total de horas não foi informado");
-            RuleFor(reserva => reserva.ClienteId).NotNull().WithMessage("O cliente não foi informado");
+            RuleFor(reserva => reserva.Id).NotNull().NotEqual(Guid.Empty);
+            RuleFor(reserva => reserva.VeiculoId).NotNull().NotEqual(Guid.Empty).WithMessage("O veículo não foi informado");
+            RuleFor(reserva => reserva.Horas).NotNull().GreaterThan(0).WithMessage("O total de horas não foi informado");
+            RuleFor(reserva => reserva.Valor).NotNull().GreaterThan(0).WithMessage("O total de horas não foi informado");
+            RuleFor(reserva => reserva.ClienteId).NotNull().NotEqual(Guid.Empty).WithMessage("O cliente não foi informado");
         }
     }
 }

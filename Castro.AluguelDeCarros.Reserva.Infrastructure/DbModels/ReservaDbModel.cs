@@ -9,6 +9,6 @@ namespace Castro.AluguelDeCarros.Reserva.Infrastructure.DbModels
         public Guid VeiculoId { get; set; }
         public decimal Valor { get; set; }
         public int Horas { get; set; }
-        public Guid UsuarioId { get; set; }
+        public Guid ClienteId { get; set; }
     }
 }

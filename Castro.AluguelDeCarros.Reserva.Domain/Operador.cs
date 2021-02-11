@@ -3,15 +3,12 @@ using System;
 
 namespace Castro.AluguelDeCarros.Reserva.Domain
 {
-    public class Operador : DomainBase
+    public class Operador : UsuarioBase
     {
-        public Operador(Guid? id, string nome, string matricula)
+        public Operador(Guid? id, string matricula, string senha, string nome, DateTime? dataCriacao) : base(id, matricula, senha, nome, dataCriacao)
         {
-            if (!id.HasValue)
-                Id = Guid.NewGuid();
-
-            Nome = nome;
             Matricula = matricula;
+            Tipo = Enums.TipoUsuarioEnum.Operador;
 
             var resultadoValidacao = new OperadorValidator().Validate(this);
             if (!resultadoValidacao.IsValid)
@@ -19,9 +16,6 @@ namespace Castro.AluguelDeCarros.Reserva.Domain
 
             Valido = resultadoValidacao.IsValid;
         }
-
-        public string Nome { get; private set; }
-        public string Matricula { get; private set; }
     }
 
     public class OperadorValidator : AbstractValidator<Operador>

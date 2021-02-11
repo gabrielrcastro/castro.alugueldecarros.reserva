@@ -62,6 +62,14 @@ C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castr
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.pdb
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.genruntimeconfig.cache
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.csproj.CoreCompileInputs.cache
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\136135\source\repos\gabrielrcastro\castro.alugueldecarros.reserva\Castro.AluguelDeCarros.Reserva\obj\Debug\netcoreapp3.1\Castro.AluguelDeCarros.Reserva.API.MvcApplicationPartsAssemblyInfo.cache

@@ -10,6 +10,8 @@ namespace Castro.AluguelDeCarros.Reserva.API.Extensions
     {
         public static void AddDependencyResolver(this IServiceCollection services)
         {
+            services.AddHttpContextAccessor();
+
             RegisterServices(services);
             RegisterRepositories(services);
         }
@@ -21,6 +23,7 @@ namespace Castro.AluguelDeCarros.Reserva.API.Extensions
             services.AddScoped<IVeiculoService, VeiculoService>();
             services.AddScoped<IMarcaService, MarcaService>();
             services.AddScoped<IModeloService, ModeloService>();
+            services.AddScoped<IUsuarioService, UsuarioService>();
         }
 
         private static void RegisterRepositories(IServiceCollection services)
@@ -30,6 +33,7 @@ namespace Castro.AluguelDeCarros.Reserva.API.Extensions
             services.AddScoped<IMarcaRepository, MarcaRepository>();
             services.AddScoped<IModeloRepository, ModeloRepository>();
             services.AddScoped<IVeiculoRepository, VeiculoRepository>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         }
     }
 }

@@ -1,5 +1,5 @@
-using AutoMapper;
 using Castro.AluguelDeCarros.Reserva.API.Extensions;
+using Castro.AluguelDeCarros.Reserva.API.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,14 +24,18 @@ namespace Castro.AluguelDeCarros.Reserva.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(options => options.Filters.Add(new Filters.DefaultExceptionFilterAttribute()))
-            .AddJsonOptions(options => { options.JsonSerializerOptions.IgnoreNullValues = true; });
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new DefaultExceptionFilterAttribute());
+            }).AddJsonOptions(options => { options.JsonSerializerOptions.IgnoreNullValues = true; });
+
+            services.AddControllers();
 
             services.AddRouting(options => options.LowercaseUrls = true);
 
             services.AddTransient<IDbConnection>((sp) => new SqlConnection(Configuration.GetConnectionString("default")));
 
-            services.AddControllers();
+            services.AddJwtConfiguration(Configuration);
 
             services.AddDependencyResolver();
 
@@ -61,10 +65,13 @@ namespace Castro.AluguelDeCarros.Reserva.API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseSwagger();
