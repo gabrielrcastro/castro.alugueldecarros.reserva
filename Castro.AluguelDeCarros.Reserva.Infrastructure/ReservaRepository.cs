@@ -52,7 +52,7 @@ namespace Castro.AluguelDeCarros.Reserva.Infrastructure
             var parameters = new DynamicParameters();
             parameters.Add("clienteId", clienteId);
 
-            var reservasDb = await _conexao.QueryAsync<UsuarioDbModel>(query, parameters);
+            var reservasDb = await _conexao.QueryAsync<ReservaDbModel>(query, parameters);
 
             return _mapper.Map<List<Domain.Reserva>>(reservasDb);
         }
